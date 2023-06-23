@@ -1,4 +1,4 @@
-package entities;
+package com.esprit.stockManagement.entities;
 
 import java.io.Serializable;
 
@@ -27,7 +27,7 @@ public class Supplier implements Serializable {
 	private String mail;
 
 	public Supplier(String name, String adress, String mail) {
-		super();
+	   this.adress =adress;
 		this.name = name;
 
 		this.mail = mail;

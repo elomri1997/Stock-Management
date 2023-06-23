@@ -1,7 +1,8 @@
-package services;
+package com.esprit.stockManagement.services;
 
 import java.util.List;
-import entities.Supplier;
+
+import com.esprit.stockManagement.entities.Supplier;
 
 public interface IsupplierService {
 
