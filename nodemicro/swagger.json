@@ -1,0 +1,102 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Product Project CRUD",
+      "description": "API"
+    },
+    "host": "localhost:3000",
+    "basePath": "/api/product",
+    "tags": [
+      {
+        "name": "Product"
+      }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json","multipart/form-data"],
+    "produces": ["application/json"],
+    "definitions":{
+        "Product":{
+            "properties":{
+                "name":"string"
+            }
+        }
+    },
+    "paths": {
+        "/uploadProduct": {
+          "post": {
+            "tags": [
+              "Users"
+            ],
+            "description": "Upload Product",
+            "parameters": [
+              {
+                "name": "Product",
+                "in": "formData",
+                "description": "Product",
+                "type": "file"
+
+              }
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "200": {
+                "description": "Product is uploaded"
+               
+              }
+            }
+          } 
+        },
+        "/updateData": {
+            "put": {
+              "tags": [
+                "Users"
+              ],
+              "description": "update uploaded Product",
+              "parameters": [
+                {
+                    "name": "user",
+                    "in": "body",
+                    "description": "Product to Update",
+                    "schema":{"$ref":"#/definitions/Product"}
+                  }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "Product is uploaded"
+                 
+                }
+              }
+            } 
+          },
+          "/deleteData": {
+            "delete": {
+              "tags": [
+                "Users"
+              ],
+              "description": "Delete uploaded Product",
+              "parameters": [
+                {
+                    "name": "user",
+                    "in": "body",
+                    "description": "Product to Delete"
+                  }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "Product is deleted"
+                 
+                }
+              }
+            } 
+          } 
+    }
+  }
