@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
-//const eurekaHelper = require('./eureka-helper');
+const eurekaHelper = require('./eureka-helper');
 const bodyParser = require('body-parser');
 const cors = require("cors");
 const mongoose = require("mongoose")
