@@ -1,0 +1,39 @@
+version: "2.0"
+services:
+  Eureka:
+    container_name: eureka-server
+    build: C:\Chaima\microServiceProject\Stock-Management\Eurika
+    ports:
+      - "8761:8761"
+    image: "eureka-server"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://localhost:8761/eureka-service
+   
+  ConfigServer:
+    container_name: config-server
+    build: C:\Chaima\microServiceProject\Stock-Management\configServer
+    ports:
+      - "8888:8888"
+    image: "config-server"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://localhost:8761/eureka-service  
+      
+  GatewayServer:
+    container_name: gateway-server
+    build: C:\Chaima\microServiceProject\Stock-Management\gateway
+    ports:
+      - "8762:8762"
+    image: "gateway-server"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://localhost:8761/eureka-service
+      
+  Suppliers:
+    container_name: suppliers
+    build: C:\Chaima\microServiceProject\Stock-Management\Suppliers
+    ports:
+      - "8101:8101"
+    image: "suppliers-image" 
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://localhost:8761/eureka-service
+    
+
