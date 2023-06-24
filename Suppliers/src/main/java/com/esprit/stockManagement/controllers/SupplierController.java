@@ -1,4 +1,4 @@
-package controllers;
+package com.esprit.stockManagement.controllers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,12 +19,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import entities.Supplier;
-import repositories.SupplierRepository;
-import services.IsupplierService;
+
+import com.esprit.stockManagement.entities.Supplier;
+import com.esprit.stockManagement.services.IsupplierService;
+
 
 @RestController
-@RequestMapping(value = "API/GestionSuppliers")
+@RequestMapping(value = "API")
 public class SupplierController {
 	
 	@Autowired
